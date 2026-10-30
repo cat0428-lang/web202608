@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="全端工程師個人履歷，包含個人簡介、技術能力、工作經驗、學習歷程與作品集。">
+  <title>個人履歷｜全端工程師</title>
+
+  <!-- Bootstrap 5：僅使用 Bootstrap 與自訂 CSS，不使用其他框架 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* CSS:GLOBAL-START */
+    :root {
+      --bg: #080d1b;
+      --bg-soft: #0e1729;
+      --panel: rgba(18, 30, 51, 0.88);
+      --line: rgba(89, 221, 255, 0.22);
+      --cyan: #55e6ff;
+      --purple: #a78bfa;
+      --green: #80ffcf;
+      --text: #edf5ff;
+      --muted: #a4b4c9;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(54, 112, 190, .22), transparent 28%),
+        radial-gradient(circle at 90% 35%, rgba(128, 75, 190, .16), transparent 26%),
+        var(--bg);
+      font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.8;
+    }
+
+    a { text-decoration: none; }
+
+    .resume-container { max-width: 1120px; }
+
+    .eyebrow {
+      color: var(--green);
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    .gradient-text {
+      color: var(--cyan);
+      background: linear-gradient(90deg, var(--cyan), var(--purple));
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section-block { padding: 76px 0; }
+
+    .section-title {
+      margin-bottom: 12px;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 800;
+    }
+
+    .section-lead { color: var(--muted); max-width: 720px; }
+
+    .tech-card {
+      height: 100%;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(145deg, rgba(20, 35, 59, .95), rgba(11, 19, 35, .94));
+      box-shadow: 0 16px 45px rgba(0, 0, 0, .18);
+      transition: transform .25s ease, border-color .25s ease;
+    }
+
+    .tech-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(85, 230, 255, .65);
+    }
+
+    .accent-line {
+      width: 58px;
+      height: 3px;
+      margin: 18px 0 24px;
+      background: linear-gradient(90deg, var(--cyan), var(--purple));
+    }
+
+    .muted { color: var(--muted); }
+
+    .tag {
+      display: inline-block;
+      margin: 5px 5px 0 0;
+      padding: 5px 12px;
+      border: 1px solid rgba(85, 230, 255, .25);
+      border-radius: 999px;
+      color: #c9f7ff;
+      background: rgba(85, 230, 255, .07);
+      font-size: .82rem;
+    }
+
+    .btn-tech {
+      padding: 10px 20px;
+      border: 1px solid var(--cyan);
+      border-radius: 8px;
+      color: #06111d;
+      background: var(--cyan);
+      font-weight: 800;
+      transition: .2s ease;
+    }
+
+    .btn-tech:hover {
+      border-color: var(--green);
+      color: #06111d;
+      background: var(--green);
+      box-shadow: 0 0 22px rgba(85, 230, 255, .25);
+    }
+
+    .btn-outline-tech {
+      padding: 9px 18px;
+      border: 1px solid rgba(167, 139, 250, .7);
+      border-radius: 8px;
+      color: #d9ccff;
+      background: transparent;
+      font-weight: 700;
+    }
+
+    .btn-outline-tech:hover {
+      color: #fff;
+      background: rgba(167, 139, 250, .18);
+    }
+    /* CSS:GLOBAL-END */
+
+    /* CSS:HERO-START */
+    .hero {
+      position: relative;
+      min-height: 570px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(115deg, rgba(8, 13, 27, .96), rgba(13, 28, 51, .88)),
+        repeating-linear-gradient(0deg, transparent, transparent 49px, rgba(85, 230, 255, .06) 50px),
+        repeating-linear-gradient(90deg, transparent, transparent 49px, rgba(85, 230, 255, .06) 50px);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      right: -100px;
+      top: 50px;
+      border: 1px solid rgba(85, 230, 255, .24);
+      border-radius: 50%;
+      box-shadow: 0 0 0 35px rgba(85, 230, 255, .035), 0 0 0 80px rgba(167, 139, 250, .025);
+      pointer-events: none;
+    }
+
+    .hero-content { position: relative; z-index: 1; }
+
+    .hero-title {
+      margin: 12px 0;
+      font-size: clamp(2.8rem, 8vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.12;
+      letter-spacing: .04em;
+    }
+
+    .hero-subtitle {
+      color: #c9d8eb;
+      font-size: clamp(1.1rem, 2vw, 1.45rem);
+    }
+
+    .hero-description { max-width: 690px; color: var(--muted); }
+
+    .hero-symbol {
+      width: 210px;
+      height: 210px;
+      display: grid;
+      place-items: center;
+      margin: auto;
+      border: 1px solid rgba(85, 230, 255, .55);
+      border-radius: 32px;
+      color: var(--cyan);
+      background: linear-gradient(145deg, rgba(85, 230, 255, .12), rgba(167, 139, 250, .12));
+      box-shadow: 0 0 55px rgba(85, 230, 255, .12), inset 0 0 35px rgba(85, 230, 255, .06);
+      font-size: 5rem;
+      font-weight: 900;
+      transform: rotate(-5deg);
+    }
+    /* CSS:HERO-END */
+
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+      border-left: 1px solid rgba(85, 230, 255, .35);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 28px;
+    }
+
+    .timeline-item:last-child { margin-bottom: 0; }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: -35px;
+      width: 13px;
+      height: 13px;
+      border: 2px solid var(--bg);
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 12px var(--cyan);
+    }
+
+    .timeline-date { color: var(--green); font-size: .9rem; font-weight: 700; }
+
+    .skill-name { display: flex; justify-content: space-between; color: #dce9f7; }
+    .progress {
+      height: 7px;
+      margin: 8px 0 18px;
+      background: #1b2a40;
+    }
+    .progress-bar { background: linear-gradient(90deg, var(--cyan), var(--purple)); }
+
+    .contact-link { color: var(--cyan); overflow-wrap: anywhere; }
+    .contact-link:hover { color: var(--green); }
+
+    .footer {
+      padding: 28px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      text-align: center;
+      font-size: .9rem;
+    }
+
+    @media (max-width: 767.98px) {
+      .section-block { padding: 55px 0; }
+      .hero { min-height: auto; padding: 82px 0; }
+      .hero-symbol { width: 135px; height: 135px; margin-top: 38px; font-size: 3.4rem; }
+      .hero::after { width: 260px; height: 260px; right: -150px; top: 30px; }
+    }
+    /* CSS:RESPONSIVE-END */
+  </style>
+</head>
+
+<body>
+  <main>
+    <!-- SECTION:HERO-START -->
+    <header class="hero">
+      <div class="container resume-container hero-content">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-8">
+            <p class="eyebrow mb-2">PERSONAL PORTFOLIO / 2026</p>
+            <h1 class="hero-title">你好，我是<br><span class="gradient-text">王小明</span></h1>
+            <p class="hero-subtitle fw-semibold mb-3">Full-Stack Developer｜全端工程師</p>
+            <p class="hero-description mb-4">
+              我熱衷於打造從使用者介面到後端服務的完整數位產品。
+              擅長將需求拆解為清楚的開發流程，運用前端技術建立直覺的操作體驗，
+              並結合後端程式、資料庫與 API，完成穩定、易維護且可持續擴充的系統。
+            </p>
+            <div class="d-flex flex-wrap gap-3">
+              <a class="btn btn-tech" href="#experience">查看工作經驗</a>
+              <a class="btn btn-outline-tech" href="#learning">查看學習歷程</a>
+            </div>
+          </div>
+          <div class="col-lg-4 d-none d-md-block">
+            <div class="hero-symbol" aria-label="程式碼符號">&lt;/&gt;</div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- SECTION:HERO-END -->
+
+    <!-- SECTION:PROFILE-START -->
+    <section class="section-block" id="profile">
+      <div class="container resume-container">
+        <p class="eyebrow">01 / PROFILE</p>
+        <h2 class="section-title">個人<span class="gradient-text">簡介</span></h2>
+        <div class="accent-line"></div>
+        <div class="row g-4">
+          <div class="col-lg-7">
+            <p class="section-lead">
+              我是一位以全端工程師為職涯目標的開發者，對網站架構、程式設計與資料流程充滿熱忱。
+              在學習與實作過程中，我從 HTML、CSS、JavaScript 等前端基礎出發，
+              逐步延伸至後端邏輯、資料庫操作與 API 串接，理解一個網站從畫面呈現到資料處理的完整流程。
+            </p>
+            <p class="muted">
+              我重視程式碼可讀性、使用者體驗與團隊溝通。面對新技術時，習慣先理解原理，
+              再透過小型專案實際驗證；遇到問題則會拆解原因、查找文件並持續測試。
+              期待加入重視技術交流的團隊，持續累積開發經驗並參與完整產品的建置。
+            </p>
+          </div>
+          <div class="col-lg-5">
+            <div class="tech-card">
+              <h3 class="h5 mb-3">職涯方向</h3>
+              <p class="muted mb-3">應徵職位：全端工程師（Full-Stack Developer）</p>
+              <div class="mb-2"><span class="tag">前端開發</span><span class="tag">後端開發</span></div>
+              <div class="mb-2"><span class="tag">資料庫設計</span><span class="tag">API 串接</span></div>
+              <div><span class="tag">系統整合</span><span class="tag">問題分析</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SECTION:PROFILE-END -->
+
+    <!-- SECTION:SKILLS-START -->
+    <section class="section-block pt-0" id="skills">
+      <div class="container resume-container">
+        <p class="eyebrow">02 / TECH STACK</p>
+        <h2 class="section-title">技術<span class="gradient-text">能力</span></h2>
+        <div class="accent-line"></div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="tech-card">
+              <h3 class="h5 gradient-text">Frontend</h3>
+              <p class="muted small">網頁介面與互動開發</p>
+              <span class="tag">HTML5</span><span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span><span class="tag">Bootstrap</span><span class="tag">RWD</span>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="tech-card">
+              <h3 class="h5 gradient-text">Backend</h3>
+              <p class="muted small">伺服器端邏輯與資料處理</p>
+              <span class="tag">Node.js</span><span class="tag">PHP</span>
+              <span class="tag">RESTful API</span>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="tech-card">
+              <h3 class="h5 gradient-text">Database</h3>
+              <p class="muted small">資料儲存與查詢管理</p>
+              <span class="tag">MySQL</span><span class="tag">SQL</span>
+              <span class="tag">Google Sheets API</span>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="tech-card">
+              <h3 class="h5 gradient-text">Tools</h3>
+              <p class="muted small">開發流程與版本管理</p>
+              <span class="tag">Git</span><span class="tag">GitHub</span>
+              <span class="tag">VS Code</span><span class="tag">Postman</span>
+            </div>
+          </div>
+        </div>
+        <p class="muted small mt-3">※ 技術項目請依照實際熟悉程度保留或刪除，避免履歷呈現與實際能力不符。</p>
+      </div>
+    </section>
+    <!-- SECTION:SKILLS-END -->
+
+    <!-- SECTION:EXPERIENCE-START -->
+    <section class="section-block" id="experience">
+      <div class="container resume-container">
+        <p class="eyebrow">03 / EXPERIENCE</p>
+        <h2 class="section-title">工作<span class="gradient-text">經驗</span></h2>
+        <div class="accent-line"></div>
+        <div class="tech-card">
+          <div class="timeline">
+            <article class="timeline-item">
+              <p class="timeline-date mb-1">2024.01－目前（請依實際情況修改）</p>
+              <h3 class="h5 mb-1">網站開發／資訊相關職務</h3>
+              <p class="muted mb-2">公司名稱｜職稱</p>
+              <ul class="muted mb-0">
+                <li>參與網站功能規劃與開發，依據需求完成頁面製作及功能調整。</li>
+                <li>運用 HTML、CSS、JavaScript 與 Bootstrap 建置響應式網頁介面。</li>
+                <li>協助資料整理、資料庫操作及前後端資料串接，確保資料呈現正確。</li>
+                <li>針對使用者回饋進行問題追蹤、除錯與功能優化。</li>
+              </ul>
+            </article>
+            <article class="timeline-item">
+              <p class="timeline-date mb-1">2021.07－2023.12（請依實際情況修改）</p>
+              <h3 class="h5 mb-1">其他工作經歷／專案經驗</h3>
+              <p class="muted mb-2">公司名稱或專案名稱</p>
+              <ul class="muted mb-0">
+                <li>與團隊成員溝通需求、安排工作進度，並依時程完成交付項目。</li>
+                <li>培養問題分析、文件整理及跨部門協作能力，將這些經驗運用於軟體開發。</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SECTION:EXPERIENCE-END -->
+
+    <!-- SECTION:LEARNING-START -->
+    <section class="section-block" id="learning">
+      <div class="container resume-container">
+        <p class="eyebrow">04 / LEARNING JOURNEY</p>
+        <h2 class="section-title">學習<span class="gradient-text">歷程</span></h2>
+        <p class="section-lead mb-4">
+          透過系統化課程、自主練習與實作專案，逐步建立全端開發能力。
+          每個階段都以實際作品驗證學習成果，並持續整理程式碼與開發心得。
+        </p>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <article class="tech-card">
+              <p class="timeline-date">STAGE 01｜前端基礎</p>
+              <h3 class="h5">HTML、CSS、Bootstrap 與 RWD</h3>
+              <p class="muted">學習語意化 HTML、CSS 排版、Bootstrap 格線系統及響應式網頁設計，完成個人頁面與版型切版練習。</p>
+              <!-- 請將 href 改成自己的作品路徑，例如：works/frontend/index.html -->
+              <a class="btn btn-outline-tech mt-3" href="請替換成你的前端作品路徑" target="_blank" rel="noopener">查看前端作品 ↗</a>
+            </article>
+          </div>
+          <div class="col-md-6">
+            <article class="tech-card">
+              <p class="timeline-date">STAGE 02｜JavaScript 程式設計</p>
+              <h3 class="h5">互動功能與資料處理</h3>
+              <p class="muted">練習變數、條件判斷、迴圈、函式、陣列、物件與 DOM 操作，並透過表單驗證及互動功能強化網頁操作體驗。</p>
+              <!-- 請將 href 改成自己的作品路徑 -->
+              <a class="btn btn-outline-tech mt-3" href="請替換成你的 JavaScript 作品路徑" target="_blank" rel="noopener">查看 JavaScript 作品 ↗</a>
+            </article>
+          </div>
+          <div class="col-md-6">
+            <article class="tech-card">
+              <p class="timeline-date">STAGE 03｜後端與資料庫</p>
+              <h3 class="h5">伺服器邏輯、API 與資料庫</h3>
+              <p class="muted">學習後端程式邏輯、HTTP 請求與回應、API 串接及 SQL 資料庫操作，理解前端、後端與資料庫之間的資料流。</p>
+              <!-- 請將 href 改成自己的作品路徑 -->
+              <a class="btn btn-outline-tech mt-3" href="請替換成你的後端作品路徑" target="_blank" rel="noopener">查看後端作品 ↗</a>
+            </article>
+          </div>
+          <div class="col-md-6">
+            <article class="tech-card">
+              <p class="timeline-date">STAGE 04｜整合實作</p>
+              <h3 class="h5">全端專案與版本管理</h3>
+              <p class="muted">整合前端介面、後端資料處理與資料庫，練習 CRUD 功能、Git 版本管理及專案部署，建立完整開發流程觀念。</p>
+              <!-- 請將 href 改成自己的完整專案路徑 -->
+              <a class="btn btn-tech mt-3" href="請替換成你的全端專案路徑" target="_blank" rel="noopener">查看全端專案 ↗</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SECTION:LEARNING-END -->
+
+    <!-- SECTION:CONTACT-START -->
+    <section class="section-block pt-0" id="contact">
+      <div class="container resume-container">
+        <div class="tech-card text-center py-5">
+          <p class="eyebrow">05 / CONTACT</p>
+          <h2 class="section-title">期待與您<span class="gradient-text">交流</span></h2>
+          <p class="muted mb-4">如果您正在尋找具備學習熱忱、重視合作並持續精進技術的全端工程師，歡迎與我聯繫。</p>
+          <p class="mb-2">Email：<a class="contact-link" href="mailto:yourname@example.com">yourname@example.com</a></p>
+          <p class="mb-0">GitHub：<a class="contact-link" href="請替換成你的GitHub網址" target="_blank" rel="noopener">請填入 GitHub 個人頁面</a></p>
+        </div>
+      </div>
+    </section>
+    <!-- SECTION:CONTACT-END -->
+  </main>
+
+  <footer class="footer">
+    <div class="container">© 2026 王小明｜Full-Stack Developer Resume</div>
+  </footer>
+</body>
+</html>
