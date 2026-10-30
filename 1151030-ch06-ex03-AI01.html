@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pink Blossom 精品花店</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- 自訂 CSS -->
+    <link rel="stylesheet" href="css/myall.css">
+
+    <style>
+        /* ================================
+           全站基本設定
+        ================================= */
+        :root {
+            --pink-bg: #fff7f8;
+            --pink-light: #fce4ec;
+            --pink-main: #eaa5b7;
+            --pink-dark: #c85c7a;
+            --pink-deep: #a83e60;
+            --pink-border: #f1cbd5;
+            --purple-light: #f0e5f1;
+            --text-main: #59434a;
+            --text-light: #92747d;
+            --white: #ffffff;
+        }
+
+        body {
+            background-color: var(--pink-bg);
+            color: var(--text-main);
+            font-family: "Microsoft JhengHei", sans-serif;
+        }
+
+        .container {
+            padding-bottom: 30px;
+        }
+
+        /* ================================
+           CSS: HEADER-START
+        ================================= */
+        .box01 {
+            min-height: 140px;
+            background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+            border-radius: 18px;
+            color: var(--pink-deep);
+            font-size: 42px;
+            font-weight: 900;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            letter-spacing: 4px;
+            box-shadow: 0 5px 15px rgba(200, 92, 122, 0.12);
+        }
+
+        .brand-subtitle {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            margin-top: 8px;
+            color: var(--text-light);
+        }
+
+        /* CSS: HEADER-END */
+
+        /* ================================
+           CSS: FLOWER-GALLERY-START
+           Header 下方五張照片
+        ================================= */
+        .flower-gallery {
+            margin-top: 20px;
+            margin-bottom: 25px;
+        }
+
+        .flower-gallery img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 3px solid white;
+            box-shadow: 0 5px 15px rgba(200, 92, 122, 0.15);
+            transition: 0.3s;
+        }
+
+        .flower-gallery img:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 20px rgba(200, 92, 122, 0.25);
+        }
+
+        /* CSS: FLOWER-GALLERY-END */
+
+        /* ================================
+           CSS: SECTION-TITLE-START
+        ================================= */
+        .section-title {
+            color: var(--pink-deep);
+            font-size: 25px;
+            font-weight: 800;
+            text-align: center;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 14px;
+            text-align: center;
+            margin-top: -12px;
+            margin-bottom: 25px;
+        }
+
+        /* CSS: SECTION-TITLE-END */
+
+        /* ================================
+           CSS: CATEGORY-START
+        ================================= */
+        .category-box {
+            background-color: var(--white);
+            border: 1px solid var(--pink-border);
+            border-radius: 14px;
+            padding: 18px 8px;
+            text-align: center;
+            color: var(--pink-dark);
+            font-weight: 700;
+            box-shadow: 0 3px 10px rgba(200, 92, 122, 0.08);
+            transition: 0.3s;
+        }
+
+        .category-box:hover {
+            background-color: var(--pink-light);
+            transform: translateY(-4px);
+        }
+
+        /* CSS: CATEGORY-END */
+
+        /* ================================
+           CSS: FEATURES-START
+        ================================= */
+        .feature-box {
+            height: 100%;
+            background: linear-gradient(145deg, #ffffff, #fff0f3);
+            border: 1px solid var(--pink-border);
+            border-radius: 16px;
+            padding: 22px 15px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(200, 92, 122, 0.08);
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .feature-box h5 {
+            color: var(--pink-deep);
+            font-size: 17px;
+            font-weight: 800;
+        }
+
+        .feature-box p {
+            color: var(--text-light);
+            font-size: 13px;
+            margin-bottom: 0;
+        }
+
+        /* CSS: FEATURES-END */
+
+        /* ================================
+           CSS: PRODUCT-START
+        ================================= */
+        .product-card {
+            height: 100%;
+            overflow: hidden;
+            background-color: var(--white);
+            border: 1px solid var(--pink-border);
+            border-radius: 16px;
+            box-shadow: 0 5px 15px rgba(200, 92, 122, 0.09);
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 22px rgba(200, 92, 122, 0.17);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 16px;
+            text-align: center;
+        }
+
+        .product-info h5 {
+            color: var(--pink-deep);
+            font-size: 17px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .product-info p {
+            color: var(--text-light);
+            font-size: 13px;
+            min-height: 38px;
+        }
+
+        .product-price {
+            color: var(--pink-dark);
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .btn-pink {
+            width: 100%;
+            background-color: var(--pink-main);
+            border: 1px solid var(--pink-main);
+            color: white;
+            border-radius: 25px;
+            padding: 8px 15px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .btn-pink:hover {
+            background-color: var(--pink-deep);
+            border-color: var(--pink-deep);
+            color: white;
+        }
+
+        /* CSS: PRODUCT-END */
+
+        /* ================================
+           CSS: FOOTER-START
+        ================================= */
+        .footer-box {
+            background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+            color: var(--pink-deep);
+            border-radius: 16px;
+            padding: 25px 15px;
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        .footer-box p {
+            margin-bottom: 5px;
+        }
+
+        /* CSS: FOOTER-END */
+
+        /* ================================
+           RWD 響應式設定
+        ================================= */
+        @media (max-width: 576px) {
+            .box01 {
+                min-height: 110px;
+                font-size: 30px;
+                letter-spacing: 2px;
+            }
+
+            .flower-gallery img {
+                height: 160px;
+            }
+
+            .product-card img {
+                height: 180px;
+            }
+
+            .section-title {
+                font-size: 21px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- =================================
+             HEADER：品牌標題
+        ================================== -->
+        <div class="row">
+            <div class="col-12 mt-3 d-md-none d-lg-block">
+                <div class="box01">
+                    <div>
+                        Pink Blossom
+                        <span class="brand-subtitle">精品花藝・為生活增添美好</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =================================
+             FLOWER GALLERY：Header 下方五張照片
+        ================================== -->
+        <div class="row flower-gallery">
+
+            <div class="col-6 col-md mt-3">
+                <img src="images/f1.avif" alt="精品花藝作品一">
+            </div>
+
+            <div class="col-6 col-md mt-3">
+                <img src="images/f2.avif" alt="精品花藝作品二">
+            </div>
+
+            <div class="col-6 col-md mt-3">
+                <img src="images/f3.avif" alt="精品花藝作品三">
+            </div>
+
+            <div class="col-6 col-md mt-3">
+                <img src="images/f4.avif" alt="精品花藝作品四">
+            </div>
+
+            <div class="col-6 col-md mt-3">
+                <img src="images/f5.avif" alt="精品花藝作品五">
+            </div>
+
+        </div>
+
+        <!-- =================================
+             CATEGORY：花卉分類
+        ================================== -->
+        <h2 class="section-title">花藝商品分類</h2>
+        <p class="section-subtitle">Find Your Favorite Flowers</p>
+
+        <div class="row">
+
+            <div class="col-sm mt-2">
+                <div class="category-box">🌹 玫瑰花</div>
+            </div>
+
+            <div class="col-sm mt-2">
+                <div class="category-box">🌷 鬱金香</div>
+            </div>
+
+            <div class="col-sm mt-2">
+                <div class="category-box">🌼 小雛菊</div>
+            </div>
+
+            <div class="col-sm mt-2">
+                <div class="category-box">💐 花束設計</div>
+            </div>
+
+            <div class="col-sm mt-2">
+                <div class="category-box">🌸 盆花系列</div>
+            </div>
+
+            <div class="col-sm mt-2">
+                <div class="category-box">🎁 節日花禮</div>
+            </div>
+
+        </div>
+
+        <!-- =================================
+             FEATURES：品牌特色
+        ================================== -->
+        <h2 class="section-title">Pink Blossom 品牌特色</h2>
+        <p class="section-subtitle">讓每一份心意，都有最美的模樣</p>
+
+        <div class="row">
+
+            <div class="col-sm-6 col-lg-3 col-xxl-2 mt-3">
+                <div class="feature-box">
+                    <div class="feature-icon">🌷</div>
+                    <h5>新鮮花材</h5>
+                    <p>嚴選優質花材，每日新鮮配送。</p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 col-xxl-2 mt-3">
+                <div class="feature-box">
+                    <div class="feature-icon">🎨</div>
+                    <h5>專業設計</h5>
+                    <p>由花藝師精心搭配每一束花。</p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 col-xxl-2 mt-3">
+                <div class="feature-box">
+                    <div class="feature-icon">🎁</div>
+                    <h5>精美包裝</h5>
+                    <p>以細緻包裝呈現滿滿心意。</p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 col-xxl-2 mt-3">
+                <div class="feature-box">
+                    <div class="feature-icon">🚚</div>
+                    <h5>貼心配送</h5>
+                    <p>提供便利配送服務。</p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 col-xxl-2 mt-3 d-none d-xxl-block">
+                <div class="feature-box">
+                    <div class="feature-icon">💗</div>
+                    <h5>客製花禮</h5>
+                    <p>依照需求打造專屬花禮。</p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 col-xxl-2 mt-3 d-none d-xxl-block">
+                <div class="feature-box">
+                    <div class="feature-icon">🌸</div>
+                    <h5>幸福傳遞</h5>
+                    <p>用花朵傳達生活中的美好。</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- =================================
+             PRODUCT：花藝商品列表
+        ================================== -->
+        <h2 class="section-title">精選花藝商品</h2>
+        <p class="section-subtitle">Selected Flowers Collection</p>
+
+        <div class="row">
+
+            <!-- 商品 1 -->
+            <div class="col-md-6 col-xl-3 mt-3">
+                <div class="product-card">
+                    <img src="images/f6.avif" alt="粉色玫瑰花束">
+                    <div class="product-info">
+                        <h5>粉色玫瑰花束</h5>
+                        <p>柔美粉色玫瑰，傳遞浪漫心意。</p>
+                        <div class="product-price">NT$ 1,280</div>
+                        <button class="btn btn-pink add-cart">加入購物車</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 商品 2 -->
+            <div class="col-md-6 col-xl-3 mt-3">
+                <div class="product-card">
+                    <img src="images/f10.avif" alt="優雅鬱金香花束">
+                    <div class="product-info">
+                        <h5>優雅鬱金香花束</h5>
+                        <p>簡約優雅的花型，適合日常送禮。</p>
+                        <div class="product-price">NT$ 1,580</div>
+                        <button class="btn btn-pink add-cart">加入購物車</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 商品 3 -->
+            <div class="col-md-6 col-xl-3 mt-3">
+                <div class="product-card">
+                    <img src="images/f5.avif" alt="清新小雛菊花束">
+                    <div class="product-info">
+                        <h5>清新小雛菊花束</h5>
+                        <p>清新自然的花藝設計，帶來好心情。</p>
+                        <div class="product-price">NT$ 980</div>
+                        <button class="btn btn-pink add-cart">加入購物車</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 商品 4 -->
+            <div class="col-md-6 col-xl-3 mt-3">
+                <div class="product-card">
+                    <img src="images/f4.avif" alt="浪漫混合花束">
+                    <div class="product-info">
+                        <h5>浪漫混合桌花</h5>
+                        <p>多種花材搭配，展現豐富層次。</p>
+                        <div class="product-price">NT$ 1,680</div>
+                        <button class="btn btn-pink add-cart">加入購物車</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 商品 5 -->
+            <div class="col-md-6 col-xl-3 mt-3">
+                <div class="product-card">
+                    <img src="images/f11.avif" alt="夢幻粉紫花束">
+                    <div class="product-info">
+                        <h5>夢幻粉紫花束</h5>
+                        <p>粉紫色系花藝，營造夢幻氛圍。</p>
+                        <div class="product-price">NT$ 1,380</div>
+                        <button class="btn btn-pink add-cart">加入購物車</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 商品 6 -->
+            <div class="col-md-6 col-xl-3 mt-3">
+                <div class="product-card">
+                    <img src="images/f1.avif" alt="經典祝福花束">
+                    <div class="product-info">
+                        <h5>經典祝福花束</h5>
+                        <p>適合生日、紀念日與各種重要時刻。</p>
+                        <div class="product-price">NT$ 1,880</div>
+                        <button class="btn btn-pink add-cart">加入購物車</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 商品 7 -->
+            <div class="col-md-6 col-xl-3 mt-3">
+                <div class="product-card">
+                    <img src="images/f12.avif" alt="日系簡約花禮">
+                    <div class="product-info">
+                        <h5>日系簡約花禮</h5>
+                        <p>自然留白風格，呈現清新質感。</p>
+                        <div class="product-price">NT$ 1,480</div>
+                        <button class="btn btn-pink add-cart">加入購物車</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 商品 8 -->
+            <div class="col-md-6 col-xl-3 mt-3">
+                <div class="product-card">
+                    <img src="images/f3.avif" alt="幸福滿滿花束">
+                    <div class="product-info">
+                        <h5>幸福滿滿花束</h5>
+                        <p>用繽紛花朵，分享幸福與喜悅。</p>
+                        <div class="product-price">NT$ 2,080</div>
+                        <button class="btn btn-pink add-cart">加入購物車</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- =================================
+             FOOTER：頁尾
+        ================================== -->
+        <div class="row">
+            <div class="col-12 mt-3 d-none d-md-block">
+                <div class="footer-box">
+                    <h5 class="fw-bold">Pink Blossom 精品花店</h5>
+                    <p>用花朵妝點生活，讓每一天都充滿美好。</p>
+                    <p>聯絡電話：04-1234-5678</p>
+                    <p>Copyright © 2026 Pink Blossom. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- 自訂 JavaScript -->
+    <script>
+        // 取得所有加入購物車按鈕
+        const cartButtons = document.querySelectorAll(".add-cart");
+
+        // 購物車商品數量
+        let cartCount = 0;
+
+        // 逐一設定按鈕點擊事件
+        cartButtons.forEach(function (button) {
+
+            button.addEventListener("click", function () {
+
+                // 商品數量加 1
+                cartCount++;
+
+                // 顯示加入購物車訊息
+                alert("已加入購物車！目前加入 " + cartCount + " 件商品。");
+
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+
+   @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap');
+
+    *{
+          margin: 0;
+          padding: 0;
+        }
+
+    body{
+     font-family: "Zen Maru Gothic", sans-serif;
+    }
+
+:root {
+    --bg0001: #FFF1E8;       /* 深一點的奶油杏 */
+    --bg0002: #FAD9E1;       /* 深櫻花粉 */
+    --bg0003: #F3C4D0;       /* 莓果淡粉 */
+    --bg0004: #F6D7A8;       /* 蜜糖杏黃 */
+    --bg0005: #C9DEC9;       /* 鼠尾草嫩綠 */
+    --bg0006: #030303;       /* 黑 */
+
+    --text001: #4A2F35;      /* 深莓果棕 */
+    --text002: #76565D;      /* 玫瑰灰棕 */
+    --text003: #f7f7f7;      /* 白 */
+
+
+    --border01: #4A2F35;      /* 深莓果棕 */
+
+
+
+
+
+     --shadow01: #4e4d4d;      /* 深莓果棕 */
+   
+
+
+
+    --btn001: #D96B86;       /* 深櫻花粉 */
+    --btn002: #B9516C;       /* 莓果玫瑰 */
+
+    --accent001: #83B594;    /* 深嫩芽綠 */
+    --accent002: #E59A68;    /* 蜜桃焦糖 */
+
+    --btn001hover: #B9516C;  /* 櫻花粉 Hover */
+    --btn002hover: #963D56;  /* 莓果粉 Hover */
+}
+
+.fw-100{
+      font-weight: 100; 
+}
+
+.fw-200{
+      font-weight: 200; 
+}
+
+.fw-300{
+      font-weight: 300; 
+}
+
+.fw-400{
+      font-weight: 400; 
+}
+
+.fw-500{
+      font-weight: 500; 
+}
+
+.fw-600{
+      font-weight: 600; 
+}
+
+.fw-700{
+      font-weight: 700; 
+}
+
+.fw-800{
+      font-weight: 800; 
+}
+
+.fw-900{
+      font-weight: 900; 
+}
+
